@@ -3,8 +3,6 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './users/users.module';
-import { UsersController } from './controllers/users/users.controller';
-import { UsersService } from './services/users/users.service';
 import * as process from "process";
 const username = process.env.POSTGRES_USER || 'postgres';
 const password = process.env.POSTGRES_PASSWORD || 'alxjr2205';
@@ -22,7 +20,7 @@ const password = process.env.POSTGRES_PASSWORD || 'alxjr2205';
     }),
     UsersModule,
   ],
-  controllers: [AppController, UsersController],
-  providers: [AppService, UsersService],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
